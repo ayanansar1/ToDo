@@ -1,0 +1,29 @@
+
+
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-lg-5 shadow mx-auto p-0 mt-4">
+  <div class="alert alert-success py-3" ><h2>Create Account</h2></div>
+  <div class="p-4">
+      <form method="post" action="/signup" >
+          {% csrf_token %}
+          {{form.as_p}}
+          <hr>
+          <input type="submit" class="btn btn-success" value="Create Account ">
+      </form>
+  </div>
+</div>
+{% endblock content %}
+
+{% block title %}SignUp{% endblock title %}
+
+
+{% block signuplogin %}
+<div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ms-auto">
+       <li class="nav-item">
+        <a class="btn shadow" href="/login">Already a User?</a>
+      </li>
+    </ul>
+</div>
+{% endblock signuplogin %}

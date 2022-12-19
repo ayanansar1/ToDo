@@ -1,0 +1,32 @@
+
+
+
+{% extends 'base.html' %}
+{% block title %}LogIn{% endblock title %}
+{% block content %}
+<div class="container pt-4">
+    <div class="col-lg-4 shadow mx-auto shadow p-0 mt-4">
+        <div class="alert alert-info " ><h3>LogIn Here</h3></div>
+        <div class="p-4">
+            <form method="POST" action = "/login">
+                {% csrf_token %}
+                {{form.as_p}}
+                <hr>
+                <div class="mx-auto"><input type="submit" class="btn btn-info " value="Log In"></div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+
+{% block signuplogin %}
+<div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+       <li class="nav-item">
+        <a class="btn shadow" href="/signup">New User?</a>
+      </li>
+    </ul>
+</div>
+{% endblock signuplogin %}
